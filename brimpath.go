@@ -10,7 +10,7 @@ import (
 
 // NormalizePath returns a path with any "." or ".." instances resolved
 // (using path.Clean) and also attempts to resolve "~" and "~user" to home
-// directories.
+// directories; trailing / will also be removed.
 func NormalizePath(value string) string {
 	value = path.Clean(filepath.ToSlash(value))
 	if value[0] == '~' {

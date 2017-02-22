@@ -23,4 +23,9 @@ func TestNormalizePath(t *testing.T) {
 	if out != exp {
 		t.Errorf("%#v != %#v", out, exp)
 	}
+	out = NormalizePath("a/")
+	exp = "a"
+	if out != exp {
+		t.Errorf("%#v != %#v", out, exp)
+	}
 }
